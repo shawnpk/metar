@@ -1,0 +1,718 @@
+Started GET "/" for ::1 at 2026-05-17 13:05:55 -0600
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='KodekloudMetarReader'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='KodekloudMetarReader'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='KodekloudMetarReader'*/[0m
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | GC: 5.8ms)
+Completed 200 OK in 43ms (Views: 20.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.8ms)
+
+
+Started GET "/weather?airport_code=KSLC&commit=Decode" for ::1 at 2026-05-17 13:06:02 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSLC", "commit" => "Decode"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | GC: 0.8ms)
+Completed 200 OK in 673ms (Views: 24.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 12.6ms)
+
+
+Started GET "/cable" for ::1 at 2026-05-17 13:06:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:06:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:07:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:07:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/weather?airport_code=KSLC&commit=Decode" for ::1 at 2026-05-17 13:07:29 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSLC", "commit" => "Decode"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 7.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.3ms)
+Completed 200 OK in 617ms (Views: 14.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/weather?airport_code=KLAX&commit=Go" for ::1 at 2026-05-17 13:07:44 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX", "commit" => "Go"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 2977ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-17 13:08:19 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='KodekloudMetarReader'*/[0m
+Processing by WeatherController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/cable" for ::1 at 2026-05-17 13:08:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:08:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/weather?airport_code=KSLC" for ::1 at 2026-05-17 13:08:26 -0600
+Processing by WeatherController#show as */*
+  Parameters: {"airport_code" => "KSLC"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 375ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started HEAD "/weather?airport_code=ZZZZ" for ::1 at 2026-05-17 13:08:34 -0600
+Processing by WeatherController#show as */*
+  Parameters: {"airport_code" => "ZZZZ"}
+Redirected to http://localhost:3000/
+↳ app/controllers/weather_controller.rb:18:in 'WeatherController#show'
+Completed 302 Found in 799ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-17 13:08:37 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=ZZZZ&commit=Go" for ::1 at 2026-05-17 13:08:40 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "ZZZZ", "commit" => "Go"}
+Redirected to http://localhost:3000/
+↳ app/controllers/weather_controller.rb:18:in 'WeatherController#show'
+Completed 302 Found in 277ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for ::1 at 2026-05-17 13:08:40 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=kslc&commit=Decode" for ::1 at 2026-05-17 13:08:47 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "kslc", "commit" => "Decode"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 190ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-17 13:09:04 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-17 13:10:01 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='KodekloudMetarReader'*/[0m
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/weather?airport_code=kslc&commit=Decode" for ::1 at 2026-05-17 13:10:07 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "kslc", "commit" => "Decode"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 9.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | GC: 0.0ms)
+Completed 200 OK in 5859ms (Views: 19.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:10:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:10:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/" for ::1 at 2026-05-17 13:11:09 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:11:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:11:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:12:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:12:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/weather?airport_code=kslc&commit=Decode" for ::1 at 2026-05-17 13:12:45 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "kslc", "commit" => "Decode"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 0.0ms)
+Completed 200 OK in 359ms (Views: 19.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KSLC" for ::1 at 2026-05-17 13:13:23 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='KodekloudMetarReader'*/[0m
+Processing by WeatherController#show as */*
+  Parameters: {"airport_code" => "KSLC"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 0.0ms)
+Completed 200 OK in 415ms (Views: 17.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/cable" for ::1 at 2026-05-17 13:13:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:13:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/weather?airport_code=kslc&commit=Decode" for ::1 at 2026-05-17 13:13:41 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='KodekloudMetarReader'*/[0m
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "kslc", "commit" => "Decode"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.0ms)
+Completed 200 OK in 1391ms (Views: 20.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/weather?airport_code=klax&commit=Go" for ::1 at 2026-05-17 13:13:46 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "klax", "commit" => "Go"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 311ms (Views: 12.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-17 13:13:53 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:13:54 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+Started GET "/weather?airport_code=KSLC" for ::1 at 2026-05-17 13:13:54 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSLC"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 310ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 274ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:13:55 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 171ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:14:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:14:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:15:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:15:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:15:32 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.0ms)
+Completed 200 OK in 441ms (Views: 18.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:15:35 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 287ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:15:46 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 243ms (Views: 13.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KSLC" for ::1 at 2026-05-17 13:15:51 -0600
+Processing by WeatherController#show as */*
+  Parameters: {"airport_code" => "KSLC"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 204ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:16:20 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 225ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:16:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:16:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/" for ::1 at 2026-05-17 13:16:57 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 3.9ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 1.2ms)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/weather?airport_code=KSLC" for ::1 at 2026-05-17 13:17:16 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSLC"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 326ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/cable" for ::1 at 2026-05-17 13:17:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:17:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/weather?airport_code=KMSY&commit=Go" for ::1 at 2026-05-17 13:18:00 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KMSY", "commit" => "Go"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 535ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:18:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:18:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/weather?airport_code=KSTl&commit=Go" for ::1 at 2026-05-17 13:18:29 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSTl", "commit" => "Go"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 524ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/weather?airport_code=KJFK" for ::1 at 2026-05-17 13:20:19 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='KodekloudMetarReader'*/[0m
+Processing by WeatherController#show as */*
+  Parameters: {"airport_code" => "KJFK"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 0.0ms)
+Completed 200 OK in 2470ms (Views: 18.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KSTl&commit=Go" for ::1 at 2026-05-17 13:20:36 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='KodekloudMetarReader'*/[0m
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSTl", "commit" => "Go"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 9.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 0.0ms)
+Completed 200 OK in 20496ms (Views: 26.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-17 13:20:57 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KSLC" for ::1 at 2026-05-17 13:21:00 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSLC"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 200ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:21:05 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 0.0ms)
+Completed 200 OK in 350ms (Views: 11.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KMSY" for ::1 at 2026-05-17 13:21:05 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KMSY"}
+Started GET "/weather?airport_code=KSTL" for ::1 at 2026-05-17 13:21:05 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSTL"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 335ms (Views: 11.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 325ms (Views: 6.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/weather?airport_code=KMSY" for ::1 at 2026-05-17 13:21:22 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KMSY"}
+Started GET "/weather?airport_code=KSLC" for ::1 at 2026-05-17 13:21:22 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KSLC"}
+Started GET "/weather?airport_code=KLAX" for ::1 at 2026-05-17 13:21:22 -0600
+Processing by WeatherController#show as HTML
+  Parameters: {"airport_code" => "KLAX"}
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 250ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 888ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  Rendering layout layouts/application.html.erb
+  Rendering weather/show.html.erb within layouts/application
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/_detail_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered weather/show.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 1839ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:21:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:21:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:22:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:22:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:23:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:23:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:24:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:24:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/" for ::1 at 2026-05-17 13:24:34 -0600
+Processing by WeatherController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering weather/index.html.erb within layouts/application
+  Rendered weather/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/cable" for ::1 at 2026-05-17 13:25:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:25:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/hotwire-spark" for ::1 at 2026-05-17 13:26:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hotwire-spark"):
+  
+Started GET "/cable" for ::1 at 2026-05-17 13:26:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/cable"):
+  
