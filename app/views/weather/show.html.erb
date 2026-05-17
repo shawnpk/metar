@@ -1,0 +1,98 @@
+<% content_for :title, "#{@airport_code} Weather — METAR Reader" %>
+
+<div class="w-full max-w-2xl mx-auto py-10 px-4">
+
+  <%# Back + search bar %>
+  <div class="flex items-center gap-3 mb-8">
+    <%= link_to "← New Search", root_path, class: "text-sky-600 hover:underline text-sm font-medium" %>
+    <%= form_with url: weather_path, method: :get, class: "flex gap-2 flex-1" do |f| %>
+      <%= f.text_field :airport_code,
+            value: @airport_code,
+            class: "flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-400 uppercase",
+            maxlength: 10 %>
+      <%= f.submit "Go", class: "bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold px-4 py-2 rounded-lg cursor-pointer transition-colors" %>
+    <% end %>
+  </div>
+
+  <%# Header %>
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-gray-800"><%= @airport_code %></h1>
+    <p class="text-gray-500 text-sm mt-1">
+      <% if @report[:observed_at] %>
+        Observed <%= @report[:observed_at].in_time_zone.strftime("%-I:%M %p %Z, %b %-d") %>
+      <% end %>
+      <%= " · AUTO" if @report[:auto] %>
+    </p>
+  </div>
+
+  <%# Summary card %>
+  <div class="bg-sky-50 border border-sky-200 rounded-2xl p-5 mb-6">
+    <h2 class="text-xs font-semibold text-sky-600 uppercase tracking-wider mb-3">Plain-English Summary</h2>
+    <ul class="space-y-1.5">
+      <% @report[:summary].each do |item| %>
+        <li class="flex items-start gap-2 text-gray-800 text-base">
+          <span class="mt-1 text-sky-400 text-xs">●</span>
+          <%= item %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%# Detail cards grid %>
+  <div class="grid grid-cols-2 gap-4 mb-6">
+    <%= render "detail_card",
+          icon: "🌡️",
+          label: "Temperature",
+          value: temperature_display(@report[:temperature]) %>
+
+    <%= render "detail_card",
+          icon: "💧",
+          label: "Dew Point",
+          value: temperature_display(@report[:dew_point]) %>
+
+    <%= render "detail_card",
+          icon: "💨",
+          label: "Wind",
+          value: @report[:wind][:description] %>
+
+    <%= render "detail_card",
+          icon: "👁️",
+          label: "Visibility",
+          value: @report[:visibility][:description] %>
+
+    <%= render "detail_card",
+          icon: "🔵",
+          label: "Altimeter",
+          value: @report[:altimeter]&.dig(:description) || "N/A" %>
+
+    <% if @report[:weather].any? %>
+      <%= render "detail_card",
+            icon: "⛈️",
+            label: "Weather",
+            value: @report[:weather].join(", ") %>
+    <% end %>
+  </div>
+
+  <%# Sky conditions %>
+  <% if @report[:clouds].any? %>
+    <div class="bg-white border border-gray-200 rounded-2xl p-5 mb-6">
+      <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Sky Conditions</h2>
+      <ul class="space-y-1">
+        <% @report[:clouds].each do |layer| %>
+          <li class="text-gray-700 text-sm">☁️ <%= layer[:description] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%# Raw METAR %>
+  <details class="group">
+    <summary class="cursor-pointer text-sm text-gray-400 hover:text-gray-600 select-none">
+      Show raw METAR
+    </summary>
+    <div class="mt-2 bg-gray-900 text-green-400 rounded-xl px-4 py-3 font-mono text-sm break-all">
+      <%= @raw_metar %>
+    </div>
+  </details>
+
+</div>
