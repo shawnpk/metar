@@ -31,7 +31,7 @@ class WeatherController < ApplicationController
 
   def track_recent(airport_code)
     recent = session[:recent_airports] || []
-    recent = ([airport_code] + recent.reject { |c| c == airport_code }).first(RECENT_LIMIT)
+    recent = ([ airport_code ] + recent.reject { |c| c == airport_code }).first(RECENT_LIMIT)
     session[:recent_airports] = recent
   end
 end

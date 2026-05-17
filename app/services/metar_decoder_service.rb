@@ -211,7 +211,7 @@ class MetarDecoderService
 
       next if parts.empty?
 
-      phrase_parts = [intensity, descriptor, parts.join(" and ")].compact
+      phrase_parts = [ intensity, descriptor, parts.join(" and ") ].compact
       phenomena << phrase_parts.join(" ").strip.capitalize
     end
 
@@ -223,7 +223,7 @@ class MetarDecoderService
 
     if @tokens.include?("SKC") || @tokens.include?("CLR") || @tokens.include?("NSC")
       key = (@tokens & %w[SKC CLR NSC]).first
-      return [{ raw: key, description: SKY_COVERAGE[key] }]
+      return [ { raw: key, description: SKY_COVERAGE[key] } ]
     end
 
     @tokens.each do |token|
