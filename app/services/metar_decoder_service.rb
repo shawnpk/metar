@@ -77,9 +77,12 @@ class MetarDecoderService
     hour = token[2..3].to_i
     min  = token[4..5].to_i
 
-    # Build a full UTC Time using current year/month — METARs are always current
+    # Build a full UTC Time using current year/month — METARs are always current.
+    # If the constructed time is more than 1 hour ahead, the METAR day crossed a
+    # month boundary (e.g., day=01 fetched on the last day of the prior month).
     now = Time.now.utc
-    Time.utc(now.year, now.month, day, hour, min)
+    t = Time.utc(now.year, now.month, day, hour, min)
+    t > now + 1.hour ? t.prev_month : t
   end
 
   def parse_wind
