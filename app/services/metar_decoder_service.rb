@@ -231,7 +231,6 @@ class MetarDecoderService
         coverage = SKY_COVERAGE[match[1]]
         altitude = match[2].to_i * 100
         cb_tcu   = match[3] == "CB" ? " (cumulonimbus)" : match[3] == "TCU" ? " (towering cumulus)" : ""
-        alt_str  = altitude >= 10_000 ? "#{altitude.to_s.reverse.gsub(/\d{3}(?=\d)/, '\0,').reverse} feet" : "#{altitude.to_s.reverse.gsub(/\d{3}(?=\d)/, '\0,').reverse} feet"
         conditions << { raw: token, description: "#{coverage} at #{format_number(altitude)} feet#{cb_tcu}" }
       end
 
