@@ -100,15 +100,16 @@ class MetarDecoderService
     unit    = match[5]
 
     speed_kt = case unit
-               when "MPS" then (speed * 1.944).round
-               when "KMH" then (speed * 0.5400).round
-               else speed
-               end
+    when "MPS" then (speed * 1.944).round
+    when "KMH" then (speed * 0.5400).round
+    else speed
+    end
+
     gust_kt  = case unit
-               when "MPS" then gust ? (gust * 1.944).round : nil
-               when "KMH" then gust ? (gust * 0.5400).round : nil
-               else gust
-               end
+    when "MPS" then gust ? (gust * 1.944).round : nil
+    when "KMH" then gust ? (gust * 0.5400).round : nil
+    else gust
+    end
 
     unit_label = unit == "KT" ? "knots" : unit == "MPS" ? "m/s" : "km/h"
 
