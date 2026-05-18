@@ -99,8 +99,16 @@ class MetarDecoderService
     gust    = match[4]&.to_i
     unit    = match[5]
 
-    speed_kt = unit == "MPS" ? (speed * 1.944).round : speed
-    gust_kt  = unit == "MPS" && gust ? (gust * 1.944).round : gust
+    speed_kt = case unit
+               when "MPS" then (speed * 1.944).round
+               when "KMH" then (speed * 0.5400).round
+               else speed
+               end
+    gust_kt  = case unit
+               when "MPS" then gust ? (gust * 1.944).round : nil
+               when "KMH" then gust ? (gust * 0.5400).round : nil
+               else gust
+               end
 
     unit_label = unit == "KT" ? "knots" : unit == "MPS" ? "m/s" : "km/h"
 
@@ -134,13 +142,16 @@ class MetarDecoderService
     # Check for CAVOK first
     return { raw: "CAVOK", description: "Ceiling and visibility OK (10+ km, no significant cloud)" } if @tokens.include?("CAVOK")
 
-    # Statute miles (US format) — handles fractions like "1/4SM" or "1 1/4SM"
-    sm_token = @tokens.find { |t| t.match?(/\A\d+\/\d+SM\z|\A\d+SM\z/) }
-    # Handle space-separated fractions like ["1", "1/4SM"]
+    # Statute miles (US format) — handles integers ("10SM"), fractions ("1/4SM"),
+    # and space-separated mixed numbers ("1" "1/4SM"). Non-zero denominator required
+    # to avoid ZeroDivisionError from Rational().
+    sm_token = nil
     prev_token_idx = nil
     @tokens.each_with_index do |t, i|
-      if t.match?(/\A\d+\/\d+SM\z/)
+      if t.match?(/\A\d+\/[1-9]\d*SM\z/)
+        sm_token = t
         prev_token_idx = i - 1 if i > 0 && @tokens[i - 1].match?(/\A\d+\z/)
+      elsif t.match?(/\A\d+SM\z/)
         sm_token = t
       end
     end
@@ -168,9 +179,7 @@ class MetarDecoderService
 
   def parse_weather_phenomena
     phenomena = []
-    weather_codes = WEATHER_PRECIP.keys + WEATHER_OBSCURATION.keys + WEATHER_OTHER.keys
     descriptor_keys = WEATHER_DESCRIPTOR.keys
-    intensity_keys  = WEATHER_INTENSITY.keys
 
     @tokens.each do |token|
       remaining = token.dup
@@ -292,18 +301,6 @@ class MetarDecoderService
     # Weather phenomena
     parts.concat(r[:weather]) if r[:weather].any?
 
-    # Temperature
-    if r[:temperature]
-      f = celsius_to_f(r[:temperature])
-      parts << "Temperature #{f}°F (#{r[:temperature]}°C)"
-    end
-
-    # Dew point / humidity feel
-    if r[:dew_point]
-      f = celsius_to_f(r[:dew_point])
-      parts << "Dew point #{f}°F (#{r[:dew_point]}°C)"
-    end
-
     # Wind
     parts << r[:wind][:description]
 
@@ -319,10 +316,6 @@ class MetarDecoderService
   def degrees_to_compass(degrees)
     index = ((degrees + 11.25) / 22.5).to_i % 16
     COMPASS_DIRECTIONS[index]
-  end
-
-  def celsius_to_f(celsius)
-    ((celsius * 9.0 / 5.0) + 32).round
   end
 
   def parse_celsius(str)

@@ -357,10 +357,6 @@ RSpec.describe MetarDecoderService do
       expect(result[:summary]).to be_an(Array).and be_present
     end
 
-    it "includes temperature in Fahrenheit and Celsius" do
-      expect(result[:summary]).to include(match(/72°F.*22°C/))
-    end
-
     it "includes wind information" do
       expect(result[:summary]).to include(match(/12 knots/))
     end

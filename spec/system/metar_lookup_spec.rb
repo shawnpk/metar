@@ -86,8 +86,7 @@ RSpec.describe "METAR lookup", type: :system do
   describe "submitting an invalid ICAO format" do
     before do
       visit root_path
-      # bypass the maxlength HTML attribute — Capybara rack_test ignores it
-      fill_in :airport_code, with: "TOOLONGCODE"
+      fill_in :airport_code, with: "AB"
       click_button "Decode"
     end
 
@@ -122,9 +121,9 @@ RSpec.describe "METAR lookup", type: :system do
       click_button "Decode"
     end
 
-    it "shows a fetch error message" do
+    it "shows a generic fetch error without leaking internal details" do
       expect(page).to have_content("Could not retrieve weather data")
-      expect(page).to have_content("Connection timed out")
+      expect(page).not_to have_content("Connection timed out")
     end
   end
 

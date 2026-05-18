@@ -75,3 +75,6 @@ yarn-debug.log*
 # Ignore key files for decrypting credentials and more.
 /config/*.key
 
+# RSpec example status persistence (used by --only-failures)
+/spec/examples.txt
+

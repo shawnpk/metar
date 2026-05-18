@@ -28,7 +28,8 @@ class WeatherController < ApplicationController
     flash[:error] = "No METAR data found for #{airport_code}. Check the airport code and try again."
     redirect_to root_path
   rescue MetarFetcherService::FetchError => e
-    flash[:error] = "Could not retrieve weather data: #{e.message}"
+    Rails.logger.error("MetarFetcherService::FetchError for #{airport_code}: #{e.message}")
+    flash[:error] = "Could not retrieve weather data. Please try again later."
     redirect_to root_path
   end
 

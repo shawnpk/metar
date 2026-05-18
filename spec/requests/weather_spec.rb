@@ -118,11 +118,11 @@ RSpec.describe "Weather", type: :request do
         expect(response).to redirect_to(root_path)
       end
 
-      it "includes the error message in the flash" do
+      it "shows a generic error message without leaking internal details" do
         get weather_path(airport_code: airport_code)
         follow_redirect!
         expect(response.body).to include("Could not retrieve weather data")
-        expect(response.body).to include("Connection timed out")
+        expect(response.body).not_to include("Connection timed out")
       end
     end
 
