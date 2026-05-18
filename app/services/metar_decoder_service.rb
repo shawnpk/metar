@@ -82,7 +82,11 @@ class MetarDecoderService
     # month boundary (e.g., day=01 fetched on the last day of the prior month).
     now = Time.now.utc
     t = Time.utc(now.year, now.month, day, hour, min)
-    t > now + 1.hour ? t.prev_month : t
+    return t unless t > now + 3600
+
+    prev_month = now.month == 1 ? 12 : now.month - 1
+    prev_year  = now.month == 1 ? now.year - 1 : now.year
+    Time.utc(prev_year, prev_month, day, hour, min)
   end
 
   def parse_wind
@@ -235,9 +239,7 @@ class MetarDecoderService
         altitude = match[2].to_i * 100
         cb_tcu   = match[3] == "CB" ? " (cumulonimbus)" : match[3] == "TCU" ? " (towering cumulus)" : ""
         conditions << { raw: token, description: "#{coverage} at #{format_number(altitude)} feet#{cb_tcu}" }
-      end
-
-      if (match = token.match(/\AVV(\d{3})\z/))
+      elsif (match = token.match(/\AVV(\d{3})\z/))
         altitude = match[1].to_i * 100
         conditions << { raw: token, description: "Sky obscured, vertical visibility #{format_number(altitude)} feet" }
       end
@@ -247,19 +249,17 @@ class MetarDecoderService
   end
 
   def parse_temperature
-    token = @tokens.find { |t| t.match?(/\A(M?\d+)\/(M?\d+)\z/) }
-    return nil unless token
-
-    celsius = parse_celsius(token.split("/").first)
-    celsius
+    return nil unless temp_dew_token
+    parse_celsius(temp_dew_token.split("/").first)
   end
 
   def parse_dew_point
-    token = @tokens.find { |t| t.match?(/\A(M?\d+)\/(M?\d+)\z/) }
-    return nil unless token
+    return nil unless temp_dew_token
+    parse_celsius(temp_dew_token.split("/").last)
+  end
 
-    celsius = parse_celsius(token.split("/").last)
-    celsius
+  def temp_dew_token
+    @temp_dew_token ||= @tokens.find { |t| t.match?(/\A(M?\d+)\/(M?\d+)\z/) }
   end
 
   def parse_altimeter

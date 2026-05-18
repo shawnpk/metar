@@ -24,7 +24,15 @@ class MetarFetcherService
     body.lines.first.strip
   rescue NotFoundError, FetchError
     raise
+  rescue Net::OpenTimeout
+    raise FetchError, "Connection timed out — the weather service did not respond"
+  rescue Net::ReadTimeout
+    raise FetchError, "The weather service took too long to respond"
+  rescue Errno::ECONNREFUSED
+    raise FetchError, "Could not connect to the weather service"
+  rescue SocketError
+    raise FetchError, "Network error — check your internet connection"
   rescue => e
-    raise FetchError, e.message
+    raise FetchError, "An unexpected error occurred while fetching weather data"
   end
 end

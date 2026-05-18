@@ -1,4 +1,5 @@
 <% content_for :title, "#{@airport_code} Weather — METAR Reader" %>
+<% content_for :description, "Live METAR weather report for #{@airport_code}: winds, visibility, sky conditions, temperature, and altimeter in plain English." %>
 
 <div class="w-full max-w-2xl mx-auto py-10 px-4">
 
@@ -88,7 +89,7 @@
   <% end %>
 
   <%# Raw METAR %>
-  <div class='mb-6'>
+  <div class="mb-6">
     <h2 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Raw METAR</h2>
     <div class="bg-gray-900 text-green-400 rounded-xl px-4 py-3 font-mono text-sm break-all">
       <%= @raw_metar %>

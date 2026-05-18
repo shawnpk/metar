@@ -13,6 +13,11 @@ class WeatherController < ApplicationController
       return redirect_to root_path
     end
 
+    unless airport_code.match?(/\A[A-Z0-9]{3,4}\z/)
+      flash[:error] = "'#{airport_code}' is not a valid airport code. Please enter a 3–4 character ICAO code (e.g. KJFK)."
+      return redirect_to root_path
+    end
+
     raw_metar = MetarFetcherService.fetch(airport_code)
     @airport_code = airport_code
     @raw_metar = raw_metar
