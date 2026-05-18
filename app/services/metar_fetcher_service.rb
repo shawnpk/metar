@@ -11,7 +11,10 @@ class MetarFetcherService
     uri = URI(BASE_URL)
     uri.query = URI.encode_www_form(ids: airport_code)
 
-    response = Net::HTTP.get_response(uri)
+    response = Net::HTTP.start(uri.host, uri.port, use_ssl: true,
+                               open_timeout: 5, read_timeout: 10) do |http|
+      http.request(Net::HTTP::Get.new(uri))
+    end
 
     raise FetchError, "API returned #{response.code}" unless response.is_a?(Net::HTTPSuccess)
 
