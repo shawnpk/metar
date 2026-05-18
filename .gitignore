@@ -58,6 +58,10 @@ node_modules/
 /public/packs-test
 /public/assets
 
+# Ignore Tailwind compiled output (regenerated at build time)
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
 # Ignore yarn files
 /yarn-error.log
 yarn-debug.log*

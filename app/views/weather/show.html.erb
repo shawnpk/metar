@@ -19,7 +19,9 @@
     <h1 class="text-3xl font-bold text-gray-800"><%= @airport_code %></h1>
     <p class="text-gray-500 text-sm mt-1">
       <% if @report[:observed_at] %>
-        Observed <%= @report[:observed_at].in_time_zone.strftime("%-I:%M %p %Z, %b %-d") %>
+        Observed <time data-controller="local-time" datetime="<%= @report[:observed_at].utc.iso8601 %>">
+                   <%= @report[:observed_at].utc.strftime("%-I:%M %p UTC, %b %-d") %>
+                 </time>
       <% end %>
       <%= " · AUTO" if @report[:auto] %>
     </p>
